@@ -13,13 +13,16 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["<rootDir>/masterchef-client/"]
+    "testPathIgnorePatterns": [
+      "<rootDir>/masterchef-client/"
+    ]
   },
   "author": "Tony Li",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.4.0",
     "eslint": "^3.19.0",
+    "eslint-config-kandl": "git+https://github.com/bbc/kandl-eslint-config.git",
     "jest": "^19.0.2"
   },
   "dependencies": {

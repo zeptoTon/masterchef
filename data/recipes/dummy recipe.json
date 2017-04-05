@@ -1,0 +1,14 @@
+{
+    "cookingTimeInMinutes": 60,
+    "ImageUrl": "",
+    "ingredients": [
+        {
+            "name": "sugar",
+            "quantity": "1 tsp"
+        },
+        {
+            "name": "salt",
+            "quantity": "1 tsp"
+        }
+    ]
+}
