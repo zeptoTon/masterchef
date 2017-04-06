@@ -16,4 +16,10 @@ describe.skip('test case for filtering recipe', () => {
 
     });
 
+    /**
+     * This case should be run in clientside
+     */
+    it('can handle lowercase and uppercase searching', () => {
+
+    });
 });
