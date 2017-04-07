@@ -116,9 +116,10 @@ class RecipeListPageGenerator {
 
     /**
      * Entry Point of using this class
+     * @return as Promise.
      */
     generateRecipeList() {
-        this._clearPagesDirectory()
+        return this._clearPagesDirectory()
             .then(this._readAllRecipes)
             .map(this._cleanRecipe)
             .then(this._sortRecipes)

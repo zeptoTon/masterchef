@@ -12,20 +12,52 @@ import RecipeList from './RecipeList';
 
 
 class App extends Component {
-  render() {
-    return (
-    <Router>
-        <div>
-            <h1>Welcome</h1>
-            <Switch>
-                <Route path='/pages/:page' component={RecipeList} />
-                <Route path='/recipes/:name' component={Recipe} />
-                <Route path='/' component={RecipeList} />
-            </Switch>
-        </div>
-    </Router>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {
+            notFound: false,
+            numberOfRecipes: null,
+            numberOfPages: null
+        };
+    }
+
+    componentDidMount() {
+        fetch('/status')
+            .then(res => {
+                if (res.status === 404) {
+                    throw new Error();
+                }
+                return res;
+            })
+            .then(res => res.json())
+            .then(status => {
+                this.setState({ ...status });
+            })
+            .catch(err => {
+                this.setState({
+                    'notFound': true
+                });
+            });
+    }
+    render() {
+        const { numberOfPages, numberOfRecipes, notFound } = this.state;
+        return (
+            <Router>
+                <div>
+                    <h1>Welcome</h1>
+                    {notFound ? (
+                        <p>Server is busy at the moment. Please try again later.</p>
+                    ) : (
+                            <Switch >
+                                <Route path='/pages/:page' render={props => <RecipeList {...props} numberOfPages={numberOfPages} numberOfRecipes={numberOfRecipes} />} />
+                                <Route path='/recipes/:name' component={Recipe} />
+                                <Route path='/' render={props => <RecipeList {...props} numberOfPages={numberOfPages} numberOfRecipes={numberOfRecipes} />} />
+                            </Switch>
+                        )}
+                </div>
+            </Router>
+        );
+    }
 }
 
 export default App;

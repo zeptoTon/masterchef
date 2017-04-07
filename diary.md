@@ -2,10 +2,17 @@
 
 ## 2017-04-07
 Bring in React Router for single app application
+no recipes handling
 TODO:
 image handling
-no recipes handling
 filter by words, by time, by ingredient
+
+There is a problem on revisit recipe list page from "back" trigger by recipe detail page, it will trigger the fetch again since the Component has lost its state after unmount. 3 solutions I could think of:
+1. put RecipeList as parent component of Recipe, so it will never unmount
+2. lift the state of RecipeList data to App.js, so it can reterive data from App after remount
+3. use Redux single store to handle state of RecipeList
+I will choose option 1 at this moment as the fastest implementation.
+
 
 ## 2017-04-06
 preprocess ready for generating recipe list page

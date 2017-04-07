@@ -26,3 +26,8 @@ app.use('/recipes', express.static(path.join(__dirname, 'data/recipes')));
  * static response of recipes list page
  */
 app.use('/pages', express.static(path.join(__dirname, 'data/pages')));
+
+/**
+ * static response of the current status of server
+ */
+app.use('/status', express.static(path.join(__dirname, 'data/status.json')));

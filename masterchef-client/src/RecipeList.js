@@ -17,7 +17,6 @@ const RecipeRow = ({ name, cookingTimeInMinutes, ingredients }) => {
 };
 
 /**
- * TODO: recipesTotalCount from server
  * TODO: show empty message if no recipe
  */
 class RecipeList extends Component {
@@ -26,41 +25,53 @@ class RecipeList extends Component {
         this.state = {
             page: props.page || 1,
             recipes: null,
-            recipesTotalCount: null
         };
     }
 
-    onSelectRecipe() {
-
+    _getRecipes() {
+        if (this.props.numberOfRecipes >= this.state.page) {
+            fetch(`/pages/${this.state.page}.json`)
+                .then(res => res.json())
+                .then(recipes => {
+                    this.setState({ recipes });
+                });
+        }
     }
 
     componentDidMount() {
-        fetch(`/pages/${this.state.page}.json`)
-            .then(res => res.json())
-            .then(recipes => {
-                this.setState({ recipes });
-            });
+        this._getRecipes();
+    }
+    componentDidUpdate(prevProps, prevState) {
+
+        if (prevProps.numberOfRecipes !== this.props.numberOfRecipes || this.state.page !== prevState.page) {
+            this._getRecipes();
+        }
     }
 
     render() {
-        const { recipes } = this.state;
+        const { numberOfPages, numberOfRecipes } = this.props;
+        const { recipes, page } = this.state;
         return (
             <div>
-                {recipes ? (
-                    <table >
-                        <thead>
-                            <tr>
-                                <th>Recipe</th>
-                                <th>Cooking Time</th>
-                                <th>Ingredients</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {recipes.map(v => <RecipeRow {...v} />)}
-                        </tbody>
-                    </table >
-                ) : (<p>Loading...</p>)
-                }
+                {numberOfRecipes !== 0 ? (
+                    recipes ? (
+                        <table >
+                            <thead>
+                                <tr>
+                                    <th>Recipe</th>
+                                    <th>Cooking Time</th>
+                                    <th>Ingredients</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {recipes.map(v => <RecipeRow {...v} />)}
+                            </tbody>
+                        </table >
+                    ) : (<p>Loading...</p>)
+
+                ) : (
+                        <p>Sorry, we currently have no recipes for you</p>
+                    )}
             </div>
 
         );

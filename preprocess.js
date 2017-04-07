@@ -6,13 +6,16 @@
 
 const RecipeListPageGenerator = require('./RecipeListPageGenerator');
 
+const StatusGenerator = require('./StatusGenerator');
 
 /**
  * main function
  */
 (function () {
     if (require.main === module) {
-        let generator = new RecipeListPageGenerator();
-        generator.generateRecipeList();
+        let recipeGenerator = new RecipeListPageGenerator();
+        let statusGenerator = new StatusGenerator();
+        recipeGenerator.generateRecipeList()
+            .then(() => statusGenerator.generateStatus());
     }
 })();
