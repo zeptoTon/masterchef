@@ -6,6 +6,7 @@
 
 const RecipeListPageGenerator = require('./RecipeListPageGenerator');
 
+
 /**
  * main function
  */

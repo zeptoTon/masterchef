@@ -1,5 +1,17 @@
 # The diary of developing this project
 
+## 2017-04-07
+Bring in React Router for single app application
+TODO:
+image handling
+no recipes handling
+filter by words, by time, by ingredient
+
+## 2017-04-06
+preprocess ready for generating recipe list page
+Implemented React Component for Recipe and RecipeList
+
+
 ## 2017-04-05
 
 Choose create-react-app for frontend, since we dont need to config tones of things to get the app work.

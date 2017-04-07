@@ -29,12 +29,12 @@ describe('test case on generating files in preprocess stage', () => {
     it('contain recipes', () => {
         let expectedResult = [
             {
-                'ImageUrl': '', 'cookingTimeInMinutes': 60,
+                'imageUrl': '', 'cookingTimeInMinutes': 60,
                 'ingredients': [{ 'name': 'sugar', 'quantity': '1 tsp' },
                 { 'name': 'salt', 'quantity': '1 tsp' }], 'name': 'dummy recipe.json'
             },
             {
-                'ImageUrl': '', 'cookingTimeInMinutes': 30,
+                'imageUrl': '', 'cookingTimeInMinutes': 30,
                 'ingredients': [], 'name': 'empty recipe.json'
             }
         ];

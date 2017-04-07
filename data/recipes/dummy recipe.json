@@ -1,6 +1,6 @@
 {
     "cookingTimeInMinutes": 60,
-    "ImageUrl": "",
+    "imageUrl": "",
     "ingredients": [
         {
             "name": "sugar",

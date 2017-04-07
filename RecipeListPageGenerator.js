@@ -10,6 +10,22 @@ class RecipeListPageGenerator {
     constructor() {
 
     }
+    /**
+     * Remove existing generated files
+     * @return Promise
+     */
+    _clearPagesDirectory() {
+        let pagePath = path.join(__dirname, 'data', 'pages');
+        return fs.readdirAsync(pagePath)
+            .then(files => {
+                return promise.map(files, filename => {
+                    return fs.unlinkAsync(path.join(pagePath, filename))
+                        .catch(err => {
+                            throw err;
+                        });
+                });
+            });
+    }
 
     /**
      * Read all recipes
@@ -102,7 +118,8 @@ class RecipeListPageGenerator {
      * Entry Point of using this class
      */
     generateRecipeList() {
-        this._readAllRecipes()
+        this._clearPagesDirectory()
+            .then(this._readAllRecipes)
             .map(this._cleanRecipe)
             .then(this._sortRecipes)
             .then(this._writeRecipePages);

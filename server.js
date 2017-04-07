@@ -20,5 +20,9 @@ if (process.env.NODE_ENV === 'production') {
 /**
  * static response of individual recipe file
  */
-app.use('/recipe', express.static(path.join(__dirname, 'data/recipes')));
+app.use('/recipes', express.static(path.join(__dirname, 'data/recipes')));
 
+/**
+ * static response of recipes list page
+ */
+app.use('/pages', express.static(path.join(__dirname, 'data/pages')));
