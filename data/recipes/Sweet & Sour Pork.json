@@ -1,0 +1,30 @@
+{
+    "cookingTimeInMinutes": 30,
+    "imageUrl": "/images/recipe/sweet-&-sour-pork.jpg",
+    "ingredients": [
+        {
+            "name": "sugar",
+            "quantity": "Secert"
+        },
+        {
+            "name": "salt",
+            "quantity": "Secert"
+        },
+        {
+            "name": "vinger",
+            "quantity": "a bit"
+        },
+        {
+            "name": "Pork Shoulder",
+            "quantity": "200g"
+        },
+        {
+            "name": "pepper(Green, Red)",
+            "quantity": 1
+        },
+        {
+            "name": "pineapple",
+            "quantity": "100g"
+        }
+    ]
+}

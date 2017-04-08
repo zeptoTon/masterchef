@@ -31,3 +31,8 @@ app.use('/pages', express.static(path.join(__dirname, 'data/pages')));
  * static response of the current status of server
  */
 app.use('/status', express.static(path.join(__dirname, 'data/status.json')));
+
+/**
+ * Serve Image
+ */
+app.use('/images/recipe', express.static(path.join(__dirname, 'images/recipe')));

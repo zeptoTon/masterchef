@@ -3,8 +3,8 @@
 ## 2017-04-07
 Bring in React Router for single app application
 no recipes handling
-TODO:
 image handling
+TODO:
 filter by words, by time, by ingredient
 
 There is a problem on revisit recipe list page from "back" trigger by recipe detail page, it will trigger the fetch again since the Component has lost its state after unmount. 3 solutions I could think of:
