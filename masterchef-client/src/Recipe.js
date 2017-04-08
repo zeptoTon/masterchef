@@ -65,7 +65,7 @@ class Recipe extends Component {
                         <div className="detail-panel">
                             <p className='content'>Cooking Time: <b>{recipe.cookingTimeInMinutes} minutes</b></p>
                             <ul>
-                                {recipe.ingredients.map((v) => <Ingredients {...v} />)}
+                                {recipe.ingredients.map((v, i) => <Ingredients key={i} {...v} />)}
                             </ul>
                         </div>
                     </div>

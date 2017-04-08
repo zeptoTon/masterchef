@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './RecipeList.css';
 
 
@@ -41,7 +37,7 @@ class RecipeList extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState({
-            'page': parseInt(nextProps.match.params.page)
+            'page': parseInt(nextProps.match.params.page, 10)
         });
     }
 
@@ -58,8 +54,8 @@ class RecipeList extends Component {
     render() {
         const { numberOfPages, numberOfRecipes } = this.props;
         const { recipes, page } = this.state;
-        const nextPage = parseInt(page) + 1;
-        const prevPage = parseInt(page) - 1;
+        const nextPage = parseInt(page, 10) + 1;
+        const prevPage = parseInt(page, 10) - 1;
         return (
             <div>
                 {numberOfRecipes !== 0 ? (
@@ -74,7 +70,7 @@ class RecipeList extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {recipes.map(v => <RecipeRow {...v} />)}
+                                    {recipes.map(v => <RecipeRow key={v.name} {...v} />)}
                                 </tbody>
                             </table>
 
