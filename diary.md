@@ -1,5 +1,61 @@
 # The diary of developing this project
 
+## Summary
+### Implemented features:
+recipe_list.feature
+ - Scenario: No recipes available
+ - Scenario: One recipe available
+ - Scenario: Select a recipe
+ - Scenario: Multiple recipes
+ - Scenario: Multiple pages of recipes
+ - Scenario: Navigating multiple pages of recipes
+recipe.feature
+ - Scenario: Recipe doesn't exists
+ - Scenario: Recipe cooking time
+ - Scenario: Recipe image
+ - Scenario: Recipe ingredients
+
+### Not Implemented:
+star.feature
+filter_recipes.feature
+
+### Technology cover:
+React Router v4 (HTML5 History API)
+Create React App (Babel + Webpack + React + HotReloading)
+Express Server
+Bluebird - Promisifly fs module
+SASS
+ES 6 syntax
+ESlint
+Jest Test Runner
+
+### TODO:
+Cache fetched recipe and page
+data entry validation
+UX test - webdriver.io + selinumn
+Image Optimisation (eg. compress, different resolution on differnt devices)
+CI flow - Travis CI
+
+
+### Major Files done by me:
+./RecipeListPageGenerator.js
+./StatusGenerator.js
+./preprocess.js
+./server.js
+./__test__/*.test.js
+./masterchef-client/src/Recipe.js
+./masterchef-client/src/Recipe.scss
+./masterchef-client/src/RecipeList.js
+./masterchef-client/src/RecipeList.scss
+./masterchef-client/src/App.js
+./data/recipes/*.json
+./images/recipe/*
+./README.md
+
+
+## 2017-04-08
+make a simply style, integrated with SASS
+
 ## 2017-04-07
 Bring in React Router for single app application
 no recipes handling

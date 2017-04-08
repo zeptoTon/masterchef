@@ -10,14 +10,6 @@ app.listen(app.get('port'), () => {
 });
 
 /**
- * Express only serves static assets in production,
- * including index.html
- */
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('masterchef-client/build'));
-}
-
-/**
  * static response of individual recipe file
  */
 app.use('/recipes', express.static(path.join(__dirname, 'data/recipes')));
@@ -36,3 +28,14 @@ app.use('/status', express.static(path.join(__dirname, 'data/status.json')));
  * Serve Image
  */
 app.use('/images/recipe', express.static(path.join(__dirname, 'images/recipe')));
+
+/**
+ * Express only serves static assets in production,
+ * including index.html
+ */
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('masterchef-client/build'));
+    app.get('/*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'masterchef-client/build', 'index.html'));
+    });
+}
