@@ -15,13 +15,15 @@ This application provide recipe and lookup feature for chef like you!
 `yarn test` for testing the serverside.
 for clientside testing, we will use `yarn test` under `/masterchef-client`
 
+**REMARK** After test will remove build files. You will have to RUN again.
+
 ## Deploy
 
-First you have to build the clientside code:
-`cd masterchef-client && yarn build`
+First you have to build (server + client) code:
+`yarn build` in the parent directory.
 
-Then you can start your server in server directory:
-`NODE_ENV=production npm run server`
+Then you can start your server in parent directory:
+`NODE_ENV=production yarn run server`
 
 After that, you need to setup reverse proxy to serve on 80 port from 3001.
 
