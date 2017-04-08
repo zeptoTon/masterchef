@@ -16,3 +16,7 @@ yarn-error.log*
 
 # vsc setting
 .vscode
+
+# build directory
+data/pages/*
+data/status.json
