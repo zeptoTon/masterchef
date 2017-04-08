@@ -1,0 +1,30 @@
+{
+    "cookingTimeInMinutes": 90,
+    "imageUrl": "/images/recipe/Brisket-Radish.jpeg",
+    "ingredients": [
+        {
+            "name": "Radishr",
+            "quantity": "1kg"
+        },
+        {
+            "name": "Brisket",
+            "quantity": "500g"
+        },
+        {
+            "name": "花椒 (Zanthoxylum)",
+            "quantity": "a bit"
+        },
+        {
+            "name": "八角 (Star anise)",
+            "quantity": "a bit"
+        },
+        {
+            "name": "Ginger",
+            "quantity": "20g"
+        },
+        {
+            "name": "Spring Onion",
+            "quantity": "a bit"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "cookingTimeInMinutes": 20,
+    "imageUrl": "/images/recipe/Special-fry-rice.jpeg",
+    "ingredients": [
+        {
+            "name": "Sugar",
+            "quantity": "a bit"
+        },
+        {
+            "name": "Shrimp",
+            "quantity": 6
+        },
+        {
+            "name": "Ketchup",
+            "quantity": "a bit"
+        },
+        {
+            "name": "Celery",
+            "quantity": "200g"
+        },
+        {
+            "name": "pepper(Green, Red)",
+            "quantity": "half"
+        },
+        {
+            "name": "any veg you like",
+            "quantity": "N/A"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "cookingTimeInMinutes": 30,
+    "imageUrl": "/images/recipe/Spaghetti-T.jpg",
+    "ingredients": [
+        {
+            "name": "spaghetti",
+            "quantity": "200g"
+        },
+        {
+            "name": "salt",
+            "quantity": "a bit"
+        },
+        {
+            "name": "tomato",
+            "quantity": 2
+        },
+        {
+            "name": "shrimp",
+            "quantity": 7
+        }
+    ]
+}

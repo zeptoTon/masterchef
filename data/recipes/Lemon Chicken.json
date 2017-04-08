@@ -1,0 +1,30 @@
+{
+    "cookingTimeInMinutes": 40,
+    "imageUrl": "/images/recipe/lemon-chicken.jpg",
+    "ingredients": [
+        {
+            "name": "Lemon",
+            "quantity": 2
+        },
+        {
+            "name": "Chicken Leg",
+            "quantity": 3
+        },
+        {
+            "name": "Custard Powder",
+            "quantity": "a bit"
+        },
+        {
+            "name": "salt",
+            "quantity": "a bit"
+        },
+        {
+            "name": "suger",
+            "quantity": "a bit"
+        },
+        {
+            "name": "Sesame oil",
+            "quantity": "2 tsp"
+        }
+    ]
+}

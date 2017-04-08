@@ -1,0 +1,22 @@
+{
+    "cookingTimeInMinutes": 15,
+    "imageUrl": "/images/recipe/ginger-spring-onion-stirfry.jpeg",
+    "ingredients": [
+        {
+            "name": "ginger",
+            "quantity": "Secert"
+        },
+        {
+            "name": "spring onion",
+            "quantity": "Secert"
+        },
+        {
+            "name": "chicker leg",
+            "quantity": 2
+        },
+        {
+            "name": "corn flour",
+            "quantity": "1 tsp"
+        }
+    ]
+}
