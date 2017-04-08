@@ -17,6 +17,7 @@ const RecipeRow = ({ name, cookingTimeInMinutes, ingredients }) => {
  * TODO: show empty message if no recipe
  */
 class RecipeList extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +26,7 @@ class RecipeList extends Component {
         };
     }
 
-    _getRecipes() {
+    _getRecipes () {
         if (this.props.numberOfRecipes >= this.state.page) {
             fetch(`/pages/${this.state.page}.json`)
                 .then(res => res.json())
@@ -35,23 +36,24 @@ class RecipeList extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps (nextProps) {
         this.setState({
             'page': parseInt(nextProps.match.params.page, 10)
         });
     }
 
-    componentDidMount() {
+    componentDidMount () {
         this._getRecipes();
     }
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate (prevProps, prevState) {
 
-        if (prevProps.numberOfRecipes !== this.props.numberOfRecipes || this.state.page !== prevState.page) {
+        if (prevProps.numberOfRecipes !== this.props.numberOfRecipes ||
+            this.state.page !== prevState.page) {
             this._getRecipes();
         }
     }
 
-    render() {
+    render () {
         const { numberOfPages, numberOfRecipes } = this.props;
         const { recipes, page } = this.state;
         const nextPage = parseInt(page, 10) + 1;
@@ -75,9 +77,10 @@ class RecipeList extends Component {
                             </table>
 
                             <div className="pagination">
-                                {0<prevPage && <Link to={`/pages/${prevPage}`} >Prev</Link>}
+                                {0 < prevPage && <Link to={`/pages/${prevPage}`} >Prev</Link>}
 
-                                {numberOfPages>=nextPage && <Link to={`/pages/${nextPage}`} >Next</Link>}
+                                {numberOfPages >= nextPage &&
+                                    <Link to={`/pages/${nextPage}`} >Next</Link>}
                             </div>
                         </div>
                     ) : (<p>Loading...</p>)

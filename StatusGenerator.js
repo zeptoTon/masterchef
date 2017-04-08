@@ -9,15 +9,11 @@ const fs = promise.promisifyAll(require('fs'));
 const path = require('path');
 
 class StatusGenerator {
-    constructor() {
-
-    }
-
     /**
      * Remove existing status file if any.
      * @return Promise
      */
-    _removeExistingStatus() {
+    _removeExistingStatus () {
         const statusPath = path.join(__dirname, 'data', 'status.json');
         return fs.unlinkAsync(statusPath)
             .catch(err => {
@@ -30,7 +26,7 @@ class StatusGenerator {
     /**
      * @Return Number as Pomise
      */
-    _findTotalNumberOfRecipes() {
+    _findTotalNumberOfRecipes () {
         const recipePath = path.join(__dirname, 'data', 'recipes');
         return fs.readdirAsync(recipePath)
             .then(files => files.length);
@@ -39,7 +35,7 @@ class StatusGenerator {
     /**
      * @Return Number as Pomise
      */
-    _findTotalNumberOfPages() {
+    _findTotalNumberOfPages () {
         const pagePath = path.join(__dirname, 'data', 'pages');
         return fs.readdirAsync(pagePath)
             .then(files => files.length);
@@ -51,7 +47,7 @@ class StatusGenerator {
      * @param {Number} numberOfPages
      * @param {Number} numberOfRecipes
      */
-    _writeStatusToJSONFile(numberOfPages, numberOfRecipes) {
+    _writeStatusToJSONFile (numberOfPages, numberOfRecipes) {
         const statusPath = path.join(__dirname, 'data', 'status.json');
         return fs.writeFileAsync(statusPath, JSON.stringify({ numberOfPages, numberOfRecipes }))
             .catch(err => { throw err; });
@@ -61,7 +57,7 @@ class StatusGenerator {
      * Genereate current status in server
      * @return as Promise.
      */
-    generateStatus() {
+    generateStatus () {
         return this._removeExistingStatus()
             .then(() => {
                 return promise.all([

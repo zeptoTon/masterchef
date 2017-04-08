@@ -20,7 +20,7 @@ class App extends Component {
         };
     }
 
-    componentDidMount() {
+    componentDidMount () {
         fetch('/status')
             .then(res => {
                 if (res.status === 404) {
@@ -38,7 +38,7 @@ class App extends Component {
                 });
             });
     }
-    render() {
+    render () {
         const { numberOfPages, numberOfRecipes, notFound } = this.state;
         return (
             <Router>
@@ -48,12 +48,12 @@ class App extends Component {
                         <p>Server is busy at the moment. Please try again later.</p>
                     ) : (
                             <div>
-                            <Switch>
-                                <Route path='/pages/:page' render={props => <RecipeList {...props} numberOfPages={numberOfPages} numberOfRecipes={numberOfRecipes} />}>
-                                </Route>
-                                <Route path='/recipes/:name' component={Recipe} />
-                                <Redirect exact path='/' to="/pages/1" />
-                            </Switch>
+                                <Switch>
+                                    <Route path='/pages/:page' render={props => <RecipeList {...props} numberOfPages={numberOfPages} numberOfRecipes={numberOfRecipes} />}>
+                                    </Route>
+                                    <Route path='/recipes/:name' component={Recipe} />
+                                    <Redirect exact path='/' to="/pages/1" />
+                                </Switch>
                             </div>
                         )}
                 </div>

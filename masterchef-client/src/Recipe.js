@@ -8,9 +8,9 @@ import './Recipe.css';
  */
 const Ingredients = ({ name, quantity }) => {
     let description;
-    if(typeof quantity === 'number'){
+    if (typeof quantity === 'number') {
         description = `${quantity} x ${name}`;
-    }else{
+    } else {
         description = `${quantity} ${name}`;
     }
     return (
@@ -23,6 +23,7 @@ const Ingredients = ({ name, quantity }) => {
  * TODO: add star recipe
  */
 class Recipe extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -31,10 +32,10 @@ class Recipe extends Component {
         };
     }
 
-    componentDidMount() {
+    componentDidMount () {
         const { name } = this.props.match.params;
         fetch(`/recipes/${name}.json`)
-            .then((res)=>{
+            .then((res) => {
                 if (res.status === 404) {
                     throw new Error();
                 }
@@ -44,14 +45,14 @@ class Recipe extends Component {
             .then(recipe => {
                 this.setState({ recipe });
             })
-            .catch(err=>{
+            .catch(err => {
                 this.setState({
                     'notFound': true
                 });
             });
     }
-    render() {
-        const {recipe, notFound} = this.state;
+    render () {
+        const { recipe, notFound } = this.state;
         const { name } = this.props.match.params;
 
         return (
@@ -63,19 +64,22 @@ class Recipe extends Component {
                             <img src={recipe.imageUrl} alt={name} />
                         </div>
                         <div className="detail-panel">
-                            <p className='content'>Cooking Time: <b>{recipe.cookingTimeInMinutes} minutes</b></p>
+                            <p className='content'>Cooking Time:
+                            <b>{recipe.cookingTimeInMinutes} minutes</b></p>
                             <ul>
                                 {recipe.ingredients.map((v, i) => <Ingredients key={i} {...v} />)}
                             </ul>
                         </div>
                     </div>
                 ) : (
-                    notFound ? (
-                        <p className="not-found">Sorry, this recipe doesn't exist or may have been removed</p>
-                    ) : (
-                        <p className="loading">Loading Recipe....</p>
-                    )
-                )}
+                        notFound ? (
+                            <p className="not-found">
+                                Sorry, this recipe doesn't exist or may have been removed
+                            </p>
+                        ) : (
+                                <p className="loading">Loading Recipe....</p>
+                            )
+                    )}
             </div>
         );
     }
