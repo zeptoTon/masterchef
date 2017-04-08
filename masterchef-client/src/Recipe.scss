@@ -1,0 +1,51 @@
+.recipe {
+    h1 {
+
+    }
+    .img-wrapper{
+        float: left;
+        background: white;
+        border: 1px solid #ccc;
+        margin-right: 20px;
+        &:before {
+            content: ' ';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        overflow: hidden;
+        text-align: center;
+        height: 380px;
+        width: 380px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+
+    .detail-panel{
+        background: #fffde6;
+        float: left;
+        width: 380px;
+        padding: 0 0 0 10px;
+
+        .content{
+
+        }
+
+        ul li {
+
+        }
+    }
+
+
+    .not-found{
+
+    }
+
+    .loading {
+
+    }
+}

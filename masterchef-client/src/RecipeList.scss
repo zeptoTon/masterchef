@@ -1,0 +1,27 @@
+.recipe-list{
+
+    table {
+        max-height: 700px;
+        thead th {
+            text-align: left;
+            vertical-align: top;
+
+            &:nth-child(2){
+                width: 70px;
+            }
+        }
+        tbody {
+            tr {
+                height: 50px;
+                &:nth-child(odd) {
+                    background: #fff8ea;
+                }
+            }
+        }
+    }
+    .pagination{
+        a {
+            margin: 10px 5px;
+        }
+    }
+}

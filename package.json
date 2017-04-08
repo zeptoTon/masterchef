@@ -1,33 +1,33 @@
 {
-    "name": "masterchef",
-    "version": "1.0.0",
-    "description": "webapp for recipes",
-    "main": "server.js",
-    "scripts": {
-        "start": "concurrently \"npm run server\" \"npm run client\"",
-        "server": "node server.js",
-        "client": "node start-client.js",
-        "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
-        "lint": "eslint .",
-        "test": "jest",
-        "preprocess": "node preprocess.js"
-    },
-    "jest": {
-        "testEnvironment": "node",
-        "testPathIgnorePatterns": [
-            "<rootDir>/masterchef-client/"
-        ]
-    },
-    "author": "Tony Li",
-    "license": "ISC",
-    "devDependencies": {
-        "concurrently": "^3.4.0",
-        "eslint": "^3.19.0",
-        "eslint-config-kandl": "git+https://github.com/bbc/kandl-eslint-config.git",
-        "jest": "^19.0.2"
-    },
-    "dependencies": {
-        "bluebird": "^3.5.0",
-        "express": "^4.15.2"
-    }
+  "name": "masterchef",
+  "version": "1.0.0",
+  "description": "webapp for recipes",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server.js",
+    "client": "node start-client.js",
+    "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
+    "lint": "eslint .",
+    "test": "jest",
+    "preprocess": "node preprocess.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "<rootDir>/masterchef-client/"
+    ]
+  },
+  "author": "Tony Li",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-kandl": "git+https://github.com/bbc/kandl-eslint-config.git",
+    "jest": "^19.0.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "express": "^4.15.2"
+  }
 }

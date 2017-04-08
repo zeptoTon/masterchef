@@ -4,7 +4,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import Recipe from './Recipe';
+import './RecipeList.css';
+
 
 const RecipeRow = ({ name, cookingTimeInMinutes, ingredients }) => {
     return (
@@ -63,7 +64,7 @@ class RecipeList extends Component {
             <div>
                 {numberOfRecipes !== 0 ? (
                     recipes ? (
-                        <div>
+                        <div className="recipe-list">
                             <table >
                                 <thead>
                                     <tr>
@@ -77,10 +78,10 @@ class RecipeList extends Component {
                                 </tbody>
                             </table>
 
-                            <div>
-                            {0<prevPage && <Link to={`/pages/${prevPage}`} >Prev</Link>}
+                            <div className="pagination">
+                                {0<prevPage && <Link to={`/pages/${prevPage}`} >Prev</Link>}
 
-                            {numberOfPages>=nextPage && <Link to={`/pages/${nextPage}`} >Next</Link>}
+                                {numberOfPages>=nextPage && <Link to={`/pages/${nextPage}`} >Next</Link>}
                             </div>
                         </div>
                     ) : (<p>Loading...</p>)

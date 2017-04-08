@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Recipe.css';
+
 
 /**
  * Helper function for Recipe Component
@@ -53,21 +55,25 @@ class Recipe extends Component {
         const { name } = this.props.match.params;
 
         return (
-            <div className="Recipe">
+            <div className="recipe">
                 {recipe ? (
                     <div>
                         <h1>{name}</h1>
-                        <p>Cooking Time: <b>{recipe.cookingTimeInMinutes} minutes</b></p>
-                        <img src={recipe.imageUrl} alt={name} />
-                        <ul>
-                            {recipe.ingredients.map((v) => <Ingredients {...v} />)}
-                        </ul>
+                        <div className="img-wrapper">
+                            <img src={recipe.imageUrl} alt={name} />
+                        </div>
+                        <div className="detail-panel">
+                            <p className='content'>Cooking Time: <b>{recipe.cookingTimeInMinutes} minutes</b></p>
+                            <ul>
+                                {recipe.ingredients.map((v) => <Ingredients {...v} />)}
+                            </ul>
+                        </div>
                     </div>
                 ) : (
                     notFound ? (
-                        <p>Sorry, this recipe doesn't exist or may have been removed</p>
+                        <p className="not-found">Sorry, this recipe doesn't exist or may have been removed</p>
                     ) : (
-                        <p>Loading Recipe....</p>
+                        <p className="loading">Loading Recipe....</p>
                     )
                 )}
             </div>
