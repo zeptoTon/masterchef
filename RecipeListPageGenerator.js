@@ -84,7 +84,7 @@ class RecipeListPageGenerator {
     _sortRecipes(recipes) {
         const key = 'cookingTimeInMinutes';
         return recipes.sort((a, b) => {
-            return a[key] > b[key];
+            return a[key] - b[key];
         });
     }
 

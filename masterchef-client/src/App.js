@@ -5,7 +5,8 @@ import {
     BrowserRouter as Router,
     Route,
     Link,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom';
 import Recipe from './Recipe';
 import RecipeList from './RecipeList';
@@ -44,15 +45,18 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <h1>Welcome</h1>
+                    <h1>Welcome to MasterChef!</h1>
                     {notFound ? (
                         <p>Server is busy at the moment. Please try again later.</p>
                     ) : (
-                            <Switch >
-                                <Route path='/pages/:page' render={props => <RecipeList {...props} numberOfPages={numberOfPages} numberOfRecipes={numberOfRecipes} />} />
+                            <div>
+                            <Switch>
+                                <Route path='/pages/:page' render={props => <RecipeList {...props} numberOfPages={numberOfPages} numberOfRecipes={numberOfRecipes} />}>
+                                </Route>
                                 <Route path='/recipes/:name' component={Recipe} />
-                                <Route path='/' render={props => <RecipeList {...props} numberOfPages={numberOfPages} numberOfRecipes={numberOfRecipes} />} />
+                                <Redirect exact path='/' to="/pages/1" />
                             </Switch>
+                            </div>
                         )}
                 </div>
             </Router>

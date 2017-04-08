@@ -11,7 +11,7 @@ There is a problem on revisit recipe list page from "back" trigger by recipe det
 1. put RecipeList as parent component of Recipe, so it will never unmount
 2. lift the state of RecipeList data to App.js, so it can reterive data from App after remount
 3. use Redux single store to handle state of RecipeList
-I will choose option 1 at this moment as the fastest implementation.
+TODO: I will choose option 1 at this moment as the fastest implementation.
 
 
 ## 2017-04-06

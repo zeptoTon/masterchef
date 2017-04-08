@@ -1,0 +1,22 @@
+{
+    "cookingTimeInMinutes": 39,
+    "imageUrl": "",
+    "ingredients": [
+        {
+            "name": "sugar",
+            "quantity": "1 tsp"
+        },
+        {
+            "name": "salt",
+            "quantity": "1 tsp"
+        },
+        {
+            "name": "chicken",
+            "quantity": 4
+        },
+        {
+            "name": "duck",
+            "quantity": 1
+        }
+    ]
+}

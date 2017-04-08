@@ -4,7 +4,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-
+import Recipe from './Recipe';
 
 const RecipeRow = ({ name, cookingTimeInMinutes, ingredients }) => {
     return (
@@ -23,7 +23,7 @@ class RecipeList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: props.page || 1,
+            page: props.match.params.page || 1,
             recipes: null,
         };
     }
@@ -36,6 +36,12 @@ class RecipeList extends Component {
                     this.setState({ recipes });
                 });
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            'page': parseInt(nextProps.match.params.page)
+        });
     }
 
     componentDidMount() {
@@ -51,29 +57,38 @@ class RecipeList extends Component {
     render() {
         const { numberOfPages, numberOfRecipes } = this.props;
         const { recipes, page } = this.state;
+        const nextPage = parseInt(page) + 1;
+        const prevPage = parseInt(page) - 1;
         return (
             <div>
                 {numberOfRecipes !== 0 ? (
                     recipes ? (
-                        <table >
-                            <thead>
-                                <tr>
-                                    <th>Recipe</th>
-                                    <th>Cooking Time</th>
-                                    <th>Ingredients</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {recipes.map(v => <RecipeRow {...v} />)}
-                            </tbody>
-                        </table >
+                        <div>
+                            <table >
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Cooking Time</th>
+                                        <th>Main Ingredients</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {recipes.map(v => <RecipeRow {...v} />)}
+                                </tbody>
+                            </table>
+
+                            <div>
+                            {0<prevPage && <Link to={`/pages/${prevPage}`} >Prev</Link>}
+
+                            {numberOfPages>=nextPage && <Link to={`/pages/${nextPage}`} >Next</Link>}
+                            </div>
+                        </div>
                     ) : (<p>Loading...</p>)
 
                 ) : (
                         <p>Sorry, we currently have no recipes for you</p>
                     )}
             </div>
-
         );
     }
 }

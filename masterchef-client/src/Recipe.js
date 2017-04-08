@@ -5,11 +5,14 @@ import React, { Component } from 'react';
  * @param {name, quantity}
  */
 const Ingredients = ({ name, quantity }) => {
+    let description;
+    if(typeof quantity === 'number'){
+        description = `${quantity} x ${name}`;
+    }else{
+        description = `${quantity} ${name}`;
+    }
     return (
-        <li>
-            <span>{name}</span>
-            <span>{quantity}</span>
-        </li>
+        <li>{description}</li>
     );
 };
 
