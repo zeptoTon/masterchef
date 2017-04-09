@@ -26,6 +26,9 @@ class Recipe extends Component {
 
     constructor(props) {
         super(props);
+        if (props.match === undefined) throw new Error(
+            'need to be created with React Router to provide {match} props'
+        );
         this.state = {
             recipe: null,
             notFound: false
