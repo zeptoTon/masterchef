@@ -28,7 +28,8 @@ filter_recipes.feature
 - SASS
 - ES 6 syntax
 - ESlint
-- Jest Test Runner
+- Jest Test Runner, server side & client side
+- JSDOM, Sinon stub & spy
 
 ### TODO:
 - Cache fetched recipe and page
@@ -50,6 +51,7 @@ filter_recipes.feature
 ./masterchef-client/src/RecipeList.js
 ./masterchef-client/src/RecipeList.scss
 ./masterchef-client/src/App.js
+./masterchef-client/__test__/*.test.js
 ./data/recipes/*.json
 ./images/recipe/*
 ./README.md
