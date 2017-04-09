@@ -9,6 +9,7 @@ recipe_list.feature
  - Scenario: Multiple recipes
  - Scenario: Multiple pages of recipes
  - Scenario: Navigating multiple pages of recipes
+
 recipe.feature
  - Scenario: Recipe doesn't exists
  - Scenario: Recipe cooking time
@@ -20,24 +21,25 @@ star.feature
 filter_recipes.feature
 
 ### Technology cover:
-React Router v4 (HTML5 History API)
-Create React App (Babel + Webpack + React + HotReloading)
-Express Server
-Bluebird - Promisifly fs module
-SASS
-ES 6 syntax
-ESlint
-Jest Test Runner
+- React Router v4 (HTML5 History API)
+- Create React App (Babel + Webpack + React + HotReloading)
+- Express Server
+- Bluebird - Promisifly fs module
+- SASS
+- ES 6 syntax
+- ESlint
+- Jest Test Runner
 
 ### TODO:
-Cache fetched recipe and page
-data entry validation
-UX test - webdriver.io + selinumn
-Image Optimisation (eg. compress, different resolution on differnt devices)
-CI flow - Travis CI
+- Cache fetched recipe and page
+- data entry validation
+- UX test - webdriver.io + selinumn
+- Image Optimisation (eg. compress, different resolution on differnt devices)
+- CI flow - Travis CI
 
 
 ### Major Files done by me:
+```
 ./RecipeListPageGenerator.js
 ./StatusGenerator.js
 ./preprocess.js
@@ -51,7 +53,7 @@ CI flow - Travis CI
 ./data/recipes/*.json
 ./images/recipe/*
 ./README.md
-
+```
 
 ## 2017-04-08
 make a simply style, integrated with SASS
@@ -71,8 +73,8 @@ TODO: I will choose option 1 at this moment as the fastest implementation.
 
 
 ## 2017-04-06
-preprocess ready for generating recipe list page
-Implemented React Component for Recipe and RecipeList
+- preprocess ready for generating recipe list page
+- Implemented React Component for Recipe and RecipeList
 
 
 ## 2017-04-05
@@ -133,7 +135,8 @@ Assumption:
 
 
 prepare recipe as JSON format, each recipe has its own file, unique name.
-JSON:
+
+```JSON:
 {
     "cookingTimeInMinutes": 60,
     "ImageUrl": "",
@@ -144,18 +147,21 @@ JSON:
         }
     ]
 }
-
+```
 how to repersent user?
+```
 {
     "name" : "John",
     "fav": [1,2,3,4],
     "oauth_token": ""
 }
-
+```
 how to authenticate a user?
+
 oauth? using google, facebook, Linkin? [npm passport]
 
 how to create a new user? oauth
+
 how to store user? filebase "./user/${unique_oauth_id}.json"
 
 if user existed, create session and record any new fav recipe
@@ -167,7 +173,9 @@ url parttern:
  - / for RLP
 
 how to test?
+
 for User experience in browser, we could use selinum + webdriver.io
+
 and mocha test case for javascript code
 
 optimaization:
