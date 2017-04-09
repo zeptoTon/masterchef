@@ -160,6 +160,10 @@ it('should show ingredients', () => {
             {
                 'name': 'salt',
                 'quantity': '1 tsp'
+            },
+            {
+                'name': 'chicken',
+                'quantity': 1
             }
         ]
     };
@@ -177,4 +181,5 @@ it('should show ingredients', () => {
 
     expect(recipe.find('li').at(0).text()).toEqual('1 tsp sugar');
     expect(recipe.find('li').at(1).text()).toEqual('1 tsp salt');
+    expect(recipe.find('li').at(2).text()).toEqual('1 x chicken');
 });
